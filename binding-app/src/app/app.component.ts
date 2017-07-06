@@ -10,13 +10,18 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
   /**Public variable */
+  firstName: string;
+  lastName: string;
   title: string;
-  name: string;
 
   ngOnInit() {
     /** Assign values to the variable after OnInit */
-    this.title = 'My Angular Binding Application';
-    this.name = 'Raj';
+    this.firstName = 'Rajendhar';
+    this.lastName = 'Mamidala';
   }
 
+  // Function to create title and bind to title.
+  createTitle (first, last) {
+    this.title = `User Added with First Name "${first}" and Last Name "${last}"`;
+  }
 }

@@ -4,15 +4,22 @@
             <div class="form-wrap">
                 <h1>My Binding Application</h1>
                 <form role="form">
-                    <!-- Title Interpolation Binding-->
+                    <!-- First Name TextBox with Property Binding-->
                     <div class="form-group">
-                        <label>Title : </label> {{title}} 
+                       <label for="firstName">First Name</label>
+                        <input type="text" [value]="firstName" name="firstName" class="form-control" placeholder="FirstName" #first>
                     </div>
-                     <!-- Name Interpolation Binding-->
+                     <!-- Last Name TextBox with Property Binding-->
                     <div class="form-group">
-                        <label for="lastName">Name : </label> {{name}}
+                       <label for="lastName">Last Name</label>
+                        <input type="text" [value]="lastName" name="lastName" class="form-control" placeholder="LastName" #last>
                     </div>
+                     <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Create Title" (click)="createTitle(first.value,last.value)">
                 </form>
+                <hr/>
+                <div class="form-group">
+                 {{title}}
+                </div>
             </div>
         </div>
         <!-- /.col-xs-12 -->
@@ -20,3 +27,4 @@
     <!-- /.row -->
 </div>
 <!-- /.container -->
+
